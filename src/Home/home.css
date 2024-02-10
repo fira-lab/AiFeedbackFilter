@@ -1,0 +1,216 @@
+.food-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  background-color: antiquewhite;
+  background-image: url('C:\Users\HP\myfirstreactapp\joy\src\Home\Images\feedback.jpg');
+  background-size: cover; /* This will make sure your image covers the entire element */
+  background-repeat: no-repeat; 
+}
+.image {
+  margin-top: 40px;
+  margin-left: 790px;
+}
+
+.image p {
+  margin-left: 40px;
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 5s ease, transform 5s ease;
+}
+
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.satisfaction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: auto;
+ 
+  padding: 50px;
+}
+.file{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: auto;
+  margin-right: 90px;
+
+}
+
+.animate-left {
+  opacity: 0;
+  margin-left: 100px;
+  transform: translateX(-10px);
+  animation: fade-in-left 2s ease-in-out forwards;
+}
+
+.animate-right {
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  margin-left: 40px;
+  border-radius: 70px;
+  transform: translateX(100px);
+  animation: fade-in-right 2s ease-in-out forwards;
+}
+.top{
+  padding-top: 100px;
+
+}
+.container1 {
+  background-color: rgb(125, 69, 255);
+  display: flex;
+  align-items: center;
+  height: 530px;
+  background-image: url('C:\Users\HP\myfirstreactapp\joy\src\Home\Images\chicken.jpg');
+  background-size: cover; /* This will make sure your image covers the entire element */
+  background-repeat: no-repeat; 
+  
+}
+
+.my-label {
+  font-size: 26px;
+}
+
+.first{
+  margin-right: 30px;
+  margin-top: 40px;
+  
+}
+
+.container1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 540px;
+}
+
+.container1 .orange {
+  position: absolute;
+  
+  top: 120px;
+  color: rgb(7, 0, 0);
+  right: 930px;
+  font-size: 50px;
+}
+
+.container1 .jun {
+  color: rgb(179, 255, 0);
+  margin-top: 70px;
+  margin-left: 70px;
+  text-align: left;
+  font-size: 20px;
+  width: 900px;
+ 
+}
+.topic{
+top: 20px;
+padding-top: 20px;
+text-align: center;
+bottom: 40px;
+margin-top: 10px;
+margin-bottom: 20px;
+
+}
+.footer {
+  background-color: #f2f2f2;
+  padding: 2px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+.footer-body {
+  background-color: #141313;
+  padding: 20px;
+  color: aliceblue;
+  border-top: 1px solid #ccc;
+}
+
+.footer-body div {
+  margin-bottom: 10px;
+}
+
+.footer-body p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.footer-body ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+
+.footer-body ul li {
+  margin-bottom: 5px;
+}
+
+
+
+.footer-body ul li:before {
+  content: "•";
+  margin-right: 5px;
+}
+
+
+.jun{
+  padding: 30px;
+}
+
+.feedback-button {
+  position: absolute;
+  top: 430px;
+  left: 70px;
+  background-color: rgb(202, 48, 48);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.feedback-button:hover {
+  background-color:brown;
+}
+
+
+.slide {
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide.active {
+  transform: scale(2);
+}
+
+
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
