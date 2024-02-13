@@ -33,7 +33,7 @@ const Contact = () => {
     formData.append('profilePicture', profilePicture);
 
     try {
-      const response = await fetch('http://localhost:5000/signup', {
+      const response = await fetch('/signup', {
         method: 'POST',
         body: formData,
       });
@@ -57,7 +57,7 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('/login', {
         method: 'POST',
         body: formData,
       });

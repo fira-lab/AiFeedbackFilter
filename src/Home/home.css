@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   background-color: antiquewhite;
-  background-image: url('C:\Users\HP\myfirstreactapp\joy\src\Home\Images\feedback.jpg');
+  background-image: url('./Images/feedback.jpg');
   background-size: cover; /* This will make sure your image covers the entire element */
   background-repeat: no-repeat; 
 }
@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   height: 530px;
-  background-image: url("C:\Users\HP\myfirstreactapp\joy\src\Home\Images\chicken.jpg");
+  background-image: url('C:\Users\HP\myfirstreactapp\joy\src\Home\Images\chicken.jpg');
   background-size: cover; /* This will make sure your image covers the entire element */
   background-repeat: no-repeat; 
   
