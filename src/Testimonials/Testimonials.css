@@ -1,5 +1,5 @@
 .main {
-  background-image: url('C:\Users\HP\myfirstreactapp\joy\src\Home\Images\feedback.jpg');
+  background-image: url('../Home/Images/feedback.jpg');
   background-size: cover; /* This will make sure your image covers the entire element */
   background-repeat: no-repeat; /* This will prevent the image from repeating */
   color: blueviolet;

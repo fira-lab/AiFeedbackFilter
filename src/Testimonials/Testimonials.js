@@ -64,7 +64,7 @@ const Testimonials = () => {
 
     try {
       // Send the data to the backend using an API
-      const response = await fetch('/api/submit-feedback', {
+      const response = await fetch('http://localhost:5000/api/submit-feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
