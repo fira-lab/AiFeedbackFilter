@@ -33,7 +33,7 @@ const Contact = () => {
     formData.append('profilePicture', profilePicture);
 
     try {
-      const response = await fetch('/signup', {
+      const response = await fetch('http://localhost:5000/signup', {
         method: 'POST',
         body: formData,
       });
@@ -57,7 +57,7 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch('/login', {
+      const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
         body: formData,
       });
@@ -103,17 +103,15 @@ const Contact = () => {
       {showSignUpForm && (
         <form id="signupForm" method="post" onSubmit={handleSignUpSubmit}>
           <div>
-            
             <div className="profilePictureContainer">
               <input type="file" id="profilePicture" name="profilePicture" onChange={handleProfilePictureChange} />
               {profilePicture && <img src={URL.createObjectURL(profilePicture)} alt="Profile Picture" />}
             </div>
-           
-            <label htmlFor="profilePicture" style={{ marginLeft: "70px", color: "blue", border: "20px", backgroundColor: "gray", display: "inline-block", padding: "5px" }}>Profile Picture</label>
-                 </div>
+            <label htmlFor="profilePicture">Profile Picture</label>
+          </div>
           <div>
             <label htmlFor="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" style={{width:"310px"}} required />
+            <input type="text" id="fullname" name="fullname" required />
           </div>
           <div>
             <label htmlFor="email">Email</label>
@@ -127,7 +125,6 @@ const Contact = () => {
             <label htmlFor="signuppassword">Password</label>
             <input type="password" id="signuppassword" name="signuppassword" required />
           </div>
-          
           <div>
             <input type="submit" value="Sign-up" />
           </div>

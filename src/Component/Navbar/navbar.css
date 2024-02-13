@@ -9,11 +9,12 @@ body {
   padding: 0;
 }
 i {
-  margin-right: 10px;
+  margin-right: 12px;
 }
 .navbar-logo {
   padding: 15px;
   color: #fff;
+  
   pointer-events: none;
   padding-right: 560px;
 }

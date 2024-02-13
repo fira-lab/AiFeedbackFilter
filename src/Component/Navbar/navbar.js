@@ -3,6 +3,7 @@ import './navbar.css';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 import 'intersection-observer';
+import beu1 from './beu1.jpg';
 
 
 const Navbar = () => {
@@ -52,7 +53,8 @@ const Navbar = () => {
   <nav className='navbar navbar-expand-lg navbar-mainbg'>
     
       <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        BeuFoodDelivery AiFilter
+      <img src={beu1} alt="BeuFoodDelivery AiFilter Logo" style={{ borderRadius:'30px',width: '70px', height: 'auto', marginLeft:'20px' }} />
+        
       </NavLink>
 
       <button
@@ -65,7 +67,7 @@ const Navbar = () => {
     
       
 
-      <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+      <div className='collapse navbar-collapse' id='navbarSupportedContent' style={{ marginLeft:'210px'}}>
         <ul className='navbar-nav ml-auto'>
           <div className='hori-selector'>
             <div className='left'></div>

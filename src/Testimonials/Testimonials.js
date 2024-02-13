@@ -10,28 +10,28 @@ const Testimonials = () => {
   const [options, setOptions] = useState([
     {
       name: "Dissatisfied",
-      color: "#00ffff",
+      color: "teal",
       value: 5123,
       checked: false,
       tooltip: "This option is for feedback related to food taste sweetness."
     },
     {
       name: "Delivery person interaction",
-      color: "#00ffff",
+      color: "teal",
       value: 8955,
       checked: false,
       tooltip: "If you encountered a problem with the delivery person interaction."
     },
     {
       name: "Late delivery",
-      color: "#00ffff",
+      color: "teal",
       value: 2324,
       checked: false,
       tooltip: "Choose this option if you get late delivery more than 30 min."
     },
     {
       name: "Order inaccuracy",
-      color: "#00ffff",
+      color: "teal",
       value: 9876,
       checked: false,
       tooltip: "Choose this option if you received order inaccuracy service."
@@ -71,7 +71,7 @@ const Testimonials = () => {
         },
         body: JSON.stringify(data)
       });
-
+         
       if (response.ok) {
         // Feedback submitted successfully
         alert("Feedback submitted successfully!");
