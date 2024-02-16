@@ -1,47 +1,94 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+import './feedback.css';
+import {DataTable} from 'react-data-table-component';
+import { LineAxisOutlined } from "@mui/icons-material";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'; 
 
 function Barchart() {
+  
   const [feedbackData, setFeedbackData] = useState([
     {
       name: "positive",
       color: "#00ff00",
       value: 6578,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Neutral",
       color: "#ff0000",
       value: 6787,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Negative",
       color: "#0000ff",
       value: 3245,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Order accuracy",
       color: "#ff00ff",
       value: 9876,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Late delivery",
       color: "#ffff00",
       value: 2324,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Dissatisfaction",
       color: "#00ffff",
       value: 5123,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
     {
       name: "Delivery person interaction",
       color: "#ff8000",
       value: 8955,
+      profilePicture: "",
+      fullName: "",
+      phoneNumber: "",
+      email: "",
+      password: "",
+      feedback: "",
     },
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [barClicked, setBarClicked] = useState(false);
 
   const seriesData = feedbackData.map((item) => item.value);
   const colors = feedbackData.map((item) => item.color);
@@ -49,12 +96,26 @@ function Barchart() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    setBarClicked(true);
   };
 
   const handleDetailButtonClick = () => {
-    setBarClicked(!barClicked);
+    setSelectedCategory(null);
   };
+
+
+  const [column , setColumn] = useState([])
+  const [records, setRecords] = useState([])
+
+  useEffect(() => {
+    // replace 'http://localhost:5000/reviews' with your actual endpoint
+    axios.get('http://localhost:5000/reviews')
+      .then(response => {
+        setRecords(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
+  }, []);
 
   return (
     <React.Fragment>
@@ -117,58 +178,29 @@ function Barchart() {
             },
           }}
         ></Chart>
-        <button
-          style={{
-            color: "white",
-            backgroundColor: "brown",
-            marginLeft: "1100px",
-            fontSize: "20px",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            border: "none",
-            cursor: "pointer",
-          }}
-          onClick={handleDetailButtonClick}
-        >
-          Detail
-        </button>
-
-        {selectedCategory && (
-          <div>
-            <h4>Selected Category: {selectedCategory}</h4>
-            {barClicked ? (
-               <table>
-               <thead>
-                 <tr>
-                   <th>Profile Picture</th>
-                   <th>Full Name</th>
-                   <th>Phone Number</th>
-                   <th>Email</th>
-                   <th>Password</th>
-                   <th>Feedback</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 {feedbackData
-                   .filter((feedback) => feedback.name === selectedCategory)
-                   .map((feedback) => (
-                     <tr key={feedback.name}>
-                       <td>{feedback.profilePicture}</td>
-                       <td>{feedback.fullName}</td>
-                       <td>{feedback.phoneNumber}</td>
-                       <td>{feedback.email}</td>
-                       <td>{feedback.password}</td>
-                       <td>{feedback.feedback}</td>
-                     </tr>
-                   ))}
-               </tbody>
-             </table>
-           ) : (
-             <p>Click on the "Detail" button to view the table.</p>
-           )}
-         </div>
-       )}
-     </div>
+       <table className="table">
+          <thead>
+            <tr>
+              
+              {['id', 'name', 'email', 'feedback'].map((c, i) => (
+                <th key={i}>{c}</th>   
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {
+              records.map((record,i) =>(
+                <tr key={i}>
+                  <td>{record.id}</td>
+                  <td>{record.name}</td>
+                  <td>{record.email}</td>
+                  <td>{record.feedback}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     </React.Fragment>
   );
 }

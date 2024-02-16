@@ -96,10 +96,10 @@ const Testimonials = () => {
         <h2>Drop your feedback in the text field</h2>
         <h3 className="testimonials-heading" data-aos="fade-up">Your feedback</h3>
         <form ref={formRef} onSubmit={handleSubmit} data-aos="fade-up">
-          <div>
-            <label htmlFor="feedback" className="feedback-label" data-aos="fade-up">Your Feedback:</label>
-            <textarea id="feedback" value={feedback} onChange={handleFeedbackChange} className="feedback-textarea" data-aos="fade-up" />
-          </div>
+        <div>
+  <label htmlFor="feedback" className="feedback-label" data-aos="fade-up">Your Feedback:</label>
+  <textarea id="feedback" value={feedback} onChange={handleFeedbackChange} className="feedback-textarea" data-aos="fade-up" required />
+</div>
           <div>
             <p className="options-label" data-aos="fade-up">Categories of Service feedbacks</p>
             {options.map((option, index) => (

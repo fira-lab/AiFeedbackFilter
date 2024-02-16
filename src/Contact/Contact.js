@@ -11,7 +11,7 @@ import a from './a.png'
 const Contact = () => {
   const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
-  const [profilePicture, setProfilePicture] = useState(null);
+  const [profilePicture, setProfilePicture] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -109,54 +109,57 @@ const Contact = () => {
       </h2>
 
       {showSignUpForm && (
-        <form id="signupForm" method="post" onSubmit={handleSignUpSubmit}>
-          <div>
-            <div className="profilePictureContainer" style={{height:'90px',borderRadius:'10px'}}>
-              <input type="file" id="profilePicture" name="profilePicture" style={{backgroundImage:'a.ping'}} onChange={handleProfilePictureChange} />
-              {profilePicture && <img src={URL.createObjectURL(profilePicture)} alt="Profile Picture" />}
-            </div>
-            <label htmlFor="profilePicture">Profile Picture</label>
-          </div>
-          <div>
-            <label htmlFor="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" required />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" required />
-          </div>
-          <div>
-            <label htmlFor="phoneNumber">Phone number</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" required />
-          </div>
-          <div>
-            <label htmlFor="signuppassword">Password</label>
-            <input type="password" id="signuppassword" name="signuppassword" required />
-          </div>
-          <div>
-            <input type="submit" value="Sign-up" />
-          </div>
-        </form>
-      )}
+  <form id="signupForm" method="post" onSubmit={handleSignUpSubmit}>
+    <div>
+      <div className="profilePictureContainer" style={{ height: '90px', borderRadius: '10px' }}>
+        <input type="file" id="profilePicture" name="profilePicture" style={{ backgroundImage: `url(${a})` }} onChange={handleProfilePictureChange} />
+        {profilePicture && <img src={URL.createObjectURL(profilePicture)} alt="Profile Picture" />}
+      </div>
+      <div>
+        <label htmlFor="profilePicture" style={{ marginLeft: "70px", color: "blue", display: "inline-block", padding: "10px 20px", backgroundColor: "brown",borderRadius:"10px", color: "white", border: "none", textAlign: "center", textDecoration: "none", cursor: "pointer" }}>Profile Picture</label>
+      </div>
+      <div>
+        <label htmlFor="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input type="text" id="email" name="email" required />
+      </div>
+      <div>
+        <label htmlFor="phoneNumber">Phone number</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required />
+      </div>
+      <div>
+        <label htmlFor="signuppassword">Password</label>
+        <input type="password" id="signuppassword" name="signuppassword" required />
+      </div>
+      <div>
+        <input type="submit" value="Sign-up" />
+      </div>
+    </div>
+  </form>
+)}
 
-      {showLoginForm && (
-        <form id="loginForm" method="post" onSubmit={handleLoginSubmit}>
-          <div>
-            <label htmlFor="username" >Email</label>
-            <input type="email" id="username" style={{height:'41px',borderRadius:'10px'}} name="username" required />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" style={{height:'41px',borderRadius:'10px'}} name="password" required />
-          </div>
-          <div>
-            <input type="checkbox" id="rememberMe" name="rememberMe" />
-            <label htmlFor="rememberMe">Remember Me</label>
-          </div>
-          <div>
-            <input type="submit" value="Login" />
-          </div>
-        </form>
+{showLoginForm && (
+  <form id="loginForm" method="post" onSubmit={handleLoginSubmit}>
+    <div>
+      <label htmlFor="username">Email</label>
+      <input type="email" id="username" style={{ height: '41px', borderRadius: '10px' }} name="username" required />
+    </div>
+    <div>
+      <label htmlFor="password">Password</label>
+      <input type="password" id="password" style={{ height: '41px', borderRadius: '10px' }} name="password" required />
+    </div>
+    <div>
+      <input type="checkbox" id="rememberMe" name="rememberMe" />
+      <label htmlFor="rememberMe">Remember Me</label>
+    </div>
+    <div>
+      <input type="submit" value="Login" />
+    </div>
+  </form>
+
       )}
     </div>
   );

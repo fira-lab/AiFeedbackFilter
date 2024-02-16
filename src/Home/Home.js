@@ -14,10 +14,11 @@ import catagory from './Images/catagory.jpg';
 import best12 from './Images/best12.jpg';
 import best14 from './Images/best14.jpg';
 import delicious from './Images/delicious.jpg';
-import best16 from './Images/best16.jpg';
+import Order from './Images/Order.jpg';
 import important from './Images/important.png';
 import Ol from './Images/Ol.jpg';
-import computer from './Images/computer.webp';
+import many from './Images/many.jpg';
+import A from "./Images/A.png";
 import good1 from './Images/good1.jpg';
 
 const Home = () => {
@@ -30,13 +31,11 @@ const Home = () => {
       <div className="food-gallery"></div>
       
       <div className='container1'>
-        <h2 className='orange' data-aos="fade-down" data-aos-delay="400">AiFeedback Filtering</h2>
-        <p className='jun' data-aos="fade-in" style={{ fontSize: "20px", backgroundColor: "brown", width: "500px", height: "200px", color: "white", margin: "right", padding: "10px", top: "40px" }}>
-          Integrating beauFoodDelivery with the An AiFilter model is like orchestrating a symphony of culinary excellence. By seamlessly merging the power of advanced artificial intelligence with the convenience of food delivery, we create an unparalleled experience that caters to the discerning tastes of our customers
-        </p>
+        <h2 className='orange' data-aos="fade-down" data-aos-delay="400" >AiFeedback Filtering</h2>
+        
  
         <Link to="/contact" exact>
-          <button className="feedback-button" data-aos="fade-up">Get Started</button>
+          <button className="feedback-button" data-aos="fade-up" data-aos-delay="800" style={{color:"White"}}>Get Started</button>
         </Link>
       </div>
       
@@ -62,7 +61,7 @@ const Home = () => {
             <img src={good1} alt='categorized' className="slide-image" data-aos="fade-right" style={{borderRadius:'10px', padding: "40px", width: "700px", height: "400px" }}></img>
           </div>
           <div className="slide">
-            <img src={delicious} alt='categorized feedbacks' className="slide-image" style={{borderRadius:'10px', padding: "30px", width: "700px", height: "380px" }} ></img>
+            <img src={many} alt='categorized feedbacks' className="slide-image" style={{borderRadius:'10px', padding: "30px", width: "700px", height: "380px" }} ></img>
           </div>
           <div className="slide">
             <img src={Ol} alt='categorized' className="slide-image" data-aos="fade-right" style={{borderRadius:'10px', padding: "40px", width: "700px", height: "400px" }}></img>
@@ -79,7 +78,7 @@ const Home = () => {
       
     
       <div className='satisfaction'>
-      <label data-aos="fade-right" data-aos-delay="190" style={{ padding: '40px',fontSize:'30px',fontFamily:'fantasy' }}>SATISFACTION</label>
+      <label data-aos="fade-right" data-aos-delay="190" style={{ padding: '40px',fontSize:'30px',fontFamily:'fantasy' }}>SATISFACTION!</label>
         <label data-aos="fade-in" data-aos-delay="290" style={{ padding: '40px',fontSize:'25px' ,textAlign: 'center' }}>AiFeedback Filter for satisfaction feedbacks<br/><br/> "The goal as a company is to have customer<br/>service that is not just the best but legendary." - Sam Walton</label>
         <img data-aos="fade-left" data-aos-delay="190" src={pizzfeature} alt='pizza' style={{ borderRadius:'10px',width: '500px', height: '400px' }}></img>
       </div>
@@ -97,37 +96,51 @@ const Home = () => {
       </div>
 
       <div className='satisfaction'>
-        <label data-aos="fade-right" data-aos-delay="150" style={{ marginLeft: '20px', padding: '50px', fontSize: '22px' }}>We build harmonized interaction with customers,<br/> beauFoodDelivery with the best Agents<br/> and satisfaction knows no bounds.</label>
+      <label data-aos="fade-right" data-aos-delay="190" style={{ padding: '40px',fontSize:'30px',fontFamily:'fantasy' }}>EXCELLENCE!</label>
+        <label data-aos="fade-right" data-aos-delay="150" style={{ marginLeft: '20px', padding: '50px', fontSize: '22px' }}><br/>Experience perfection with our food delivery service. Enjoy personalized, seamless interactions as we bring your orders to your doorstep, ensuring a delightful experience from start to finish.</label>
         <img data-aos="fade-left" data-aos-delay="150" src={feedback2} alt='order' style={{ borderRadius:'10px',width: '500px', height: '400px'  }}></img>
       </div>
       
 
       <div>
-        <label style={{fontSize:"40px", marginLeft:"500px",fontFamily:"sans-serif"}}>We avoid any late Delivery</label>
+        <label style={{fontSize:"40px", marginLeft:"500px",fontFamily:"sans-serif"}}>Deliverying in Ordered Accuracy</label>
       </div>
       <div className='file'>
-        <img data-aos="fade-right" data-aos-delay="150" src={Foodengine} alt='chicken' style={{ borderRadius:'10px',width: '500px', height: '400px' , marginLeft: '70px' }}></img>
-        <label data-aos="fade-down" data-aos-delay="150" style={{ fontSize: '23px', padding: '70px', fontFamily: '', textAlign: 'center' }}>We Deliver Best with the Speed</label>
-        <label data-aos="fade-left" data-aos-delay="150" style={{ fontSize: '23px', padding: '70px' }}>Timing is our main goal setting, <br/> beauFoodDelivery us apart from the rest of the competitives.</label>
+        <img data-aos="fade-right" data-aos-delay="150" src={A} alt='chicken' style={{ borderRadius:'10px',width: '500px', height: '400px' , marginLeft: '70px' }}></img>
+        <label data-aos="fade-down" data-aos-delay="150" style={{ fontSize: '23px', padding: '40px', fontFamily: '', textAlign: 'center' }}>Experience the convenience and reliability of our food delivery service, where we deliver your orders with precision and accuracy, ensuring that each dish arrives intact and in the exact order you desire.</label>
+        <label data-aos="fade-left" data-aos-delay="150" style={{ fontSize: '35px', padding: '40px',marginLeft:'40px',marginTop:'30px' }}>PRECISION!</label>
       </div>
 
-      <div className='footer-body'>
-        <div>Beu foodDelivery</div>
-        <div>
-          <p>We wil need to express the best explanation of the realm of the sourship</p>
-          <ul>
-            <li>people</li>
-            <li>satisfaction</li>
-            <li>late Delivery</li>
-            <li>person interaction</li>
-            <li>accurate </li>
-          </ul>
-        </div>
-      </div>
+      <div class="footer-body">
+  <div class="column">
+    <h3>Beu foodDelivery</h3>
+    <p>focus on customer satisfaction, timely delivery, and accurate orders.</p>
+   
+  </div>
+  <div class="column">
+    <h4>About Us</h4>
+    <ul>
+      <li>People</li>
+      <li>Satisfaction</li>
+      <li>Late Delivery</li>
+      <li>Person Interaction</li>
+      <li>Accuracy</li>
+    </ul>
+  </div>
+  <div class="column">
+    <h4>Contact Us</h4>
+    <p>123 Main Street</p>
+    <p>City, State, ZIP</p>
+    <p>Phone: 123-456-7890</p>
+    <p>Email: info@beufooddelivery.com</p>
+  </div>
+</div>
       
-      <div className='footer'>
-        @Copyright  Firaol   Terefe   Portfolio
-      </div>
+<div className="footer" style={{ textAlign: "center", fontSize: "14px", color: "#888" }}>
+  <p>
+    &copy; {new Date().getFullYear()} Firaol Terefe Portfolio. All rights reserved.
+  </p>
+</div>
     </div>
   );
 };

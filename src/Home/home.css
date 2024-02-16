@@ -69,9 +69,10 @@
   display: flex;
   align-items: center;
   height: 530px;
-  background-image:url('./Images/App-A-Success.jpg');
+  background-image:url('./Images/App.png');
   background-size: cover; /* This will make sure your image covers the entire element */
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;   
+  background-position: 0px -120px;
   
 }
 
@@ -95,7 +96,7 @@
 .container1 .orange {
   position: absolute;
   
-  top: 120px;
+  top: 90px;
   color: rgb(7, 0, 0);
   right: 930px;
   font-size: 50px;
@@ -119,47 +120,65 @@ margin-top: 10px;
 margin-bottom: 20px;
 
 }
-.footer {
-  background-color: #f2f2f2;
-  padding: 2px;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-}
+/* Footer Styles */
 .footer-body {
-  background-color: #141313;
-  padding: 20px;
-  color: aliceblue;
-  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
 }
 
-.footer-body div {
+.column {
+  flex: 1;
+  margin-right: 20px;
+}
+.column ul{
+  color:#ffffff;
+}
+
+.column h3,
+.column h4 {
+  color: #ffffff;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.footer-body p {
-  font-size: 16px;
-  line-height: 1.5;
+.column p {
+  color: #ffffff;
+  margin-bottom: 5px;
 }
 
-
-.footer-body ul {
+.column ul {
   list-style-type: none;
-  padding: 10px;
+  padding: 0;
+  margin: 0;
 }
 
-
-.footer-body ul li {
+.column li {
   margin-bottom: 5px;
 }
 
 
-
-.footer-body ul li:before {
-  content: "•";
-  margin-right: 5px;
+.file{
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .footer-body {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .column {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
 
 .jun{
   padding: 30px;
@@ -167,14 +186,14 @@ margin-bottom: 20px;
 
 .feedback-button {
   position: absolute;
-  top: 430px;
+  top: 450px;
   left: 70px;
-  background-color: rgb(202, 48, 48);
+  background-color: rgb(0, 0, 0);
   color: white;
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   text-decoration: none;
 }
