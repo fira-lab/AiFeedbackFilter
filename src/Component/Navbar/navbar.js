@@ -65,8 +65,6 @@ const Navbar = () => {
       </button>
     
     
-      
-
       <div className='collapse navbar-collapse' id='navbarSupportedContent' style={{ marginLeft:'210px'}}>
         <ul className='navbar-nav ml-auto'>
           <div className='hori-selector'>

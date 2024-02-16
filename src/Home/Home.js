@@ -36,7 +36,7 @@ const Home = () => {
         </p>
  
         <Link to="/contact" exact>
-          <button className="feedback-button" data-aos="fade-up">Give Feedback</button>
+          <button className="feedback-button" data-aos="fade-up">Get Started</button>
         </Link>
       </div>
       
@@ -49,7 +49,7 @@ const Home = () => {
           slidesToScroll={1}
           autoplay={true}
           centerMode={true}
-          autoplaySpeed={3000}
+          autoplaySpeed={2000}
           className="slider-container"
         >
           <div className="slide">
@@ -79,16 +79,17 @@ const Home = () => {
       
     
       <div className='satisfaction'>
-        <label data-aos="fade-right" data-aos-delay="150" style={{ padding: '40px',fontSize:'25px' }}>AiFeedback Filter for satisfaction feedbacks<br/><br/> "The goal as a company is to have customer service<br/>that is not just the best but legendary." - Sam Walton</label>
-        <img data-aos="fade-left" data-aos-delay="150" src={pizzfeature} alt='pizza' style={{ borderRadius:'10px',width: '500px', height: '400px' }}></img>
+      <label data-aos="fade-right" data-aos-delay="190" style={{ padding: '40px',fontSize:'30px',fontFamily:'fantasy' }}>SATISFACTION</label>
+        <label data-aos="fade-in" data-aos-delay="290" style={{ padding: '40px',fontSize:'25px' ,textAlign: 'center' }}>AiFeedback Filter for satisfaction feedbacks<br/><br/> "The goal as a company is to have customer<br/>service that is not just the best but legendary." - Sam Walton</label>
+        <img data-aos="fade-left" data-aos-delay="190" src={pizzfeature} alt='pizza' style={{ borderRadius:'10px',width: '500px', height: '400px' }}></img>
       </div>
       <div>
         <label style={{fontSize:"40px", marginLeft:"300px",fontFamily:"sans-serif", paddingBottom:'30px'}}>Reliable Delivery Services: Punctuality Guaranteed! <br/></label>
       </div>
       <div className='file'>
         <img data-aos="fade-right" data-aos-delay="150" src={Foodengine} alt='chicken' style={{ borderRadius:'10px',width: '500px', height: '400px' , marginLeft: '70px' }}></img>
-        <label data-aos="fade-down" data-aos-delay="150" style={{ fontSize: '23px', padding: '70px', fontFamily: '', textAlign: 'center' }}>We Deliver Best with the Speed</label>
-        <label data-aos="fade-left" data-aos-delay="150" style={{ fontSize: '23px', padding: '70px' }}>Timing is our main goal setting, <br/> beauFoodDelivery us apart from the rest of the competitives.</label>
+        <label data-aos="fade-down" data-aos-delay="150" style={{ fontSize: '23px', padding: '40px', fontFamily: '', textAlign: 'center' }}>Timing is our main goal setting, <br/> beauFoodDelivery us apart from the rest of the competitives</label>
+        <label data-aos="fade-left" data-aos-delay="150" style={{ fontSize: '35px', padding: '40px',marginLeft:'40px' }}>TIMING!</label>
       </div>
       
       <div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Testimonials.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -13,34 +13,36 @@ const Testimonials = () => {
       color: "teal",
       value: 5123,
       checked: false,
-      tooltip: "This option is for feedback related to food taste sweetness."
+      tooltip: "Check this box if you are not satisfied with the food taste."
     },
     {
       name: "Delivery person interaction",
       color: "teal",
       value: 8955,
       checked: false,
-      tooltip: "If you encountered a problem with the delivery person interaction."
+      tooltip: "Check this box If you encountered inconvenience with the delivery person interaction."
     },
     {
       name: "Late delivery",
       color: "teal",
       value: 2324,
       checked: false,
-      tooltip: "Choose this option if you get late delivery more than 30 min."
+      tooltip: "Check this box if you get late delivery than the time specified."
     },
     {
       name: "Order inaccuracy",
       color: "teal",
       value: 9876,
       checked: false,
-      tooltip: "Choose this option if you received order inaccuracy service."
+      tooltip: "Check this box if you received order inaccuracy service."
     },
   ]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const formRef = useRef(null); // Create a ref for the form element
 
   const handleFeedbackChange = (e) => {
     setFeedback(e.target.value);
@@ -75,6 +77,9 @@ const Testimonials = () => {
       if (response.ok) {
         // Feedback submitted successfully
         alert("Feedback submitted successfully!");
+        setFeedback(''); // Reset the feedback state
+        const resetOptions = options.map(option => ({ ...option, checked: false })); // Reset the options state
+        setOptions(resetOptions); // Reset the form
       } else {
         // Handle error response from the backend
         alert("Failed to submit feedback. Please try again.");
@@ -90,7 +95,7 @@ const Testimonials = () => {
       <div className="testimonials-container">
         <h2>Drop your feedback in the text field</h2>
         <h3 className="testimonials-heading" data-aos="fade-up">Your feedback</h3>
-        <form onSubmit={handleSubmit} data-aos="fade-up">
+        <form ref={formRef} onSubmit={handleSubmit} data-aos="fade-up">
           <div>
             <label htmlFor="feedback" className="feedback-label" data-aos="fade-up">Your Feedback:</label>
             <textarea id="feedback" value={feedback} onChange={handleFeedbackChange} className="feedback-textarea" data-aos="fade-up" />

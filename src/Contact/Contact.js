@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './contact.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../Component/Navbar/navbar';
+import a from './a.png'
+
+
 
 const Contact = () => {
   const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [profilePicture, setProfilePicture] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init();
@@ -33,16 +39,18 @@ const Contact = () => {
     formData.append('profilePicture', profilePicture);
 
     try {
-      const response = await fetch('/signup', {
+      const response = await fetch('http://localhost:5000/auth/signup', {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
-        console.log('Sign-up successful');
+        
         // Reset form and profile picture state
         event.target.reset();
         setProfilePicture(null);
+        navigate('/testimonial');
+        alert('Sign-up successful');
       } else {
         console.log('Sign-up failed');
       }
@@ -53,21 +61,21 @@ const Contact = () => {
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
-
+  
     const formData = new FormData(event.target);
-
+  
     try {
-      const response = await fetch('/login', {
+      const response = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
         body: formData,
       });
-
+  
       if (response.ok) {
-        console.log('Login successful');
-        // Reset form state
-        event.target.reset();
+        alert('Login successful');
+        // Navigate to Testimonials page
+        navigate('/testimonial');
       } else {
-        console.log('Login failed');
+        alert('Login failed');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -103,8 +111,8 @@ const Contact = () => {
       {showSignUpForm && (
         <form id="signupForm" method="post" onSubmit={handleSignUpSubmit}>
           <div>
-            <div className="profilePictureContainer">
-              <input type="file" id="profilePicture" name="profilePicture" onChange={handleProfilePictureChange} />
+            <div className="profilePictureContainer" style={{height:'90px',borderRadius:'10px'}}>
+              <input type="file" id="profilePicture" name="profilePicture" style={{backgroundImage:'a.ping'}} onChange={handleProfilePictureChange} />
               {profilePicture && <img src={URL.createObjectURL(profilePicture)} alt="Profile Picture" />}
             </div>
             <label htmlFor="profilePicture">Profile Picture</label>
@@ -134,12 +142,12 @@ const Contact = () => {
       {showLoginForm && (
         <form id="loginForm" method="post" onSubmit={handleLoginSubmit}>
           <div>
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" name="username" required />
+            <label htmlFor="username" >Email</label>
+            <input type="email" id="username" style={{height:'41px',borderRadius:'10px'}} name="username" required />
           </div>
           <div>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" required />
+            <input type="password" id="password" style={{height:'41px',borderRadius:'10px'}} name="password" required />
           </div>
           <div>
             <input type="checkbox" id="rememberMe" name="rememberMe" />

@@ -2,7 +2,7 @@
   background-image: url('../Home/Images/feedback.jpg');
   background-size: cover; /* This will make sure your image covers the entire element */
   background-repeat: no-repeat; /* This will prevent the image from repeating */
-  color: blueviolet;
+  color:teal;
   height: 100vh; 
   padding-top: 50px;/* This will make the element take up the full height of the viewport */
 }

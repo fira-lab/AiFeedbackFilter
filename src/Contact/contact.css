@@ -53,6 +53,7 @@ input[type="submit"]:hover {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  background-image: "./a";
 }
 .signup-text-container {
   display: flex;
@@ -72,6 +73,7 @@ input[type="submit"]:hover {
  
   background-size: cover; 
   background-position-x: 116px;
+  background-image: "./a";
 }
 .container h2{
   margin-left: 50px;
@@ -86,6 +88,7 @@ input[type="submit"]:hover {
   border: visible;
   outline: none;
   display: none;
+  background-image: "./a";
 
 }
 
@@ -97,6 +100,8 @@ input[type="submit"]:hover {
   margin-left: 90px;
   border: 2px solid #000;
   cursor: pointer;
+  background-image: "a.ping";
+ 
 }
 
 .profilePictureContainer img:hover {
@@ -108,4 +113,6 @@ input[type="submit"]:hover {
   background-image: url('a.png'); /* Add the path to the temporary picture */
   background-size: cover;
   background-position: center;
+  background-image: "a.ping";
+
 }
