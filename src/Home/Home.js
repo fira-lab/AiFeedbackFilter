@@ -92,7 +92,8 @@ const Home = () => {
       </div>
       
       <div>
-        <label style={{fontSize:"40px", marginLeft:"500px",fontFamily:"sans-serif"}}>We utilize the harmonized with people</label>
+        <label style={{fontSize:"40px", marginLeft:"100px",fontFamily:"sans-serif", textAlign:'center'}}>Experience seamless harmony between our delivery<br>
+        </br> heroes and valued customers</label>
       </div>
 
       <div className='satisfaction'>
@@ -112,10 +113,24 @@ const Home = () => {
       </div>
 
       <div class="footer-body">
+      
   <div class="column">
-    <h3>Beu foodDelivery</h3>
-    <p>focus on customer satisfaction, timely delivery, and accurate orders.</p>
-   
+    <h3>AI Feedback Filter</h3>
+    <p>Filters 10,000 feedback entries into3 categories:</p>
+    <ul>
+      <li>Positive</li>
+      <li>Neutral</li>
+      <li>Negative</li>
+    </ul>
+  </div>
+  <div class="column">
+    <h3>Beu Food Delivery</h3>
+    <p>Focus on:</p>
+    <ul>
+      <li>Customer satisfaction</li>
+      <li>Timely delivery</li>
+      <li>Accurate orders</li>
+    </ul>
   </div>
   <div class="column">
     <h4>About Us</h4>
